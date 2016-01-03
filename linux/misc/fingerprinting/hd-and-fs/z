@@ -1,0 +1,4 @@
+#!/bin/bash
+
+make clean target=main
+make target=main

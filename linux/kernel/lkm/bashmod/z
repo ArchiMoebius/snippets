@@ -1,0 +1,4 @@
+#!/bin/bash
+
+make clean && make && insmod bashmod.ko
+echo "To remove me run: rmmod bashmod.ko"

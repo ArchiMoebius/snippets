@@ -1,0 +1,5 @@
+CRITICAL:root:You must supply me with keys!
+
+CRITICAL:root:I need:
+CA.cert, client.pkey and client.cert
+

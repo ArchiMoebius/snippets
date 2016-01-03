@@ -1,0 +1,13 @@
+A resonable 'fingerprint' based upon a two pieces of datum; 
+namly: partition layout and device serial.
+to further the integrity of this approach one might make a map of currently
+utilized and non utilized inodes to create a 'fingerprint snapshot' on a 
+filesystem basis.
+
+To compile either run ./z or 
+make clean target=main
+and then
+make target=main
+afterwards
+./main /dev/devicelocation
+(ex: /dev/sda)
