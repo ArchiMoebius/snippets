@@ -1,0 +1,26 @@
+# cat /etc/systemd/system/beets.service 
+
+[Unit]
+Description=Beets
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=beets
+Group=beets
+WorkingDirectory=/data/beets
+ExecStart=/usr/local/bin/beet web
+Restart=always
+Environment=USER=beets HOME=/data/beets/
+
+# Some distributions may not support these hardening directives. If you cannot start the service due
+# to an unknown option, comment out the ones not supported by your version of systemd.
+ProtectSystem=full
+PrivateDevices=yes
+PrivateTmp=yes
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
+

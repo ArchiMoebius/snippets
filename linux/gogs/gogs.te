@@ -1,0 +1,40 @@
+module gogs 1.0;
+
+require {
+	type setfiles_t;
+	type setroubleshootd_t;
+	type abrt_dump_oops_t;
+	type kernel_t;
+	type default_t;
+	type init_t;
+	type sshd_t;
+	class capability2 mac_admin;
+	class file { execute open read };
+	class system module_request;
+}
+
+#============= abrt_dump_oops_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow abrt_dump_oops_t kernel_t:system module_request;
+
+#============= init_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow init_t default_t:file { execute open read };
+
+#============= setfiles_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow setfiles_t self:capability2 mac_admin;
+
+#============= setroubleshootd_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow setroubleshootd_t kernel_t:system module_request;
+
+#============= sshd_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow sshd_t default_t:file read;
+
